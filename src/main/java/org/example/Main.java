@@ -7,6 +7,13 @@ public class Main {
         checkSumSign();
         printColor();
         compareNumbers();
+        System.out.println(isSumInRange(5, 7));
+        printNumberSign(5);
+        printNumberSign(0);
+        printNumberSign(-3);
+        System.out.println(isNegative(-5));
+        System.out.println(isNegative(0));
+        System.out.println(isNegative(7));
     }
 
     public static void printThreeWords() {
@@ -35,9 +42,9 @@ public class Main {
         if (value <= 0) {
             System.out.println("Красный");
         } else if (value <= 100) {
-            System.out.println("Жёлтый");
+            System.out.println("Желтый");
         } else {
-            System.out.println("Зелёный");
+            System.out.println("Зеленый");
         }
     }
 
@@ -48,6 +55,32 @@ public class Main {
             System.out.println("a>=b");
         } else {
             System.out.println("a<b");
+        }
+    }
+
+    public static boolean isSumInRange(int a, int b) {
+        int sum = a + b;
+
+        if (sum >= 10 && sum <= 20) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void printNumberSign(int number) {
+        if (number >= 0) {
+            System.out.println("Положительное");
+        } else {
+            System.out.println("Отрицательное");
+        }
+    }
+
+    public static boolean isNegative(int number) {
+        if (number < 0) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
