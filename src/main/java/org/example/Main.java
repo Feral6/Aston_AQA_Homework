@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +16,16 @@ public class Main {
         System.out.println(isNegative(-5));
         System.out.println(isNegative(0));
         System.out.println(isNegative(7));
+        printStringNTimes("Привет", 3);
+        System.out.println(isLeapYear(2000));
+        System.out.println(isLeapYear(1900));
+        System.out.println(isLeapYear(2024));
+        System.out.println(isLeapYear(2023));
+        invertArray();
+        fillArray();
+        multiplySmallNumbers();
+        fillDiagonal();
+        System.out.println(Arrays.toString(createArray(5, 7)));
     }
 
     public static void printThreeWords() {
@@ -82,5 +94,72 @@ public class Main {
         } else {
             return false;
         }
+    }
+
+    public static void printStringNTimes(String text, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println(text);
+        }
+    }
+
+    public static boolean isLeapYear(int year) {
+        if (year % 400 == 0) {
+            return true;
+        } else if (year % 100 == 0) {
+            return false;
+        } else if (year % 4 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void invertArray() {
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                arr[i] = 1;
+            } else {
+                arr[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void fillArray() {
+        int[] arr = new int[100];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void multiplySmallNumbers() {
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 6) {
+                arr[i] = arr[i] * 2;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void fillDiagonal() {
+        int n = 5;
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            matrix[i][i] = 1;
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+    }
+
+    public static int[] createArray(int len, int initialValue) {
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+        }
+        return arr;
     }
 }
