@@ -18,6 +18,14 @@ public class Main {
         for (Product product : productsArray) {
             product.printInfo();
             System.out.println("---------------------------");
+            Park park = new Park("Парк Горького");
+
+            Park.Attraction coaster = park.new Attraction("Американские горки", "10:00-22:00", 25);
+            Park.Attraction wheel = park.new Attraction("Колесо обозрения", "09:00-23:00", 15);
+
+            coaster.printInfo();
+            System.out.println("---------------------------");
+            wheel.printInfo();
         }
     }
 }
