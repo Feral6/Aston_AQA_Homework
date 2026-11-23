@@ -18,7 +18,7 @@ public class Product {
     }
     public void printInfo() {
         System.out.println("Название: " + name);
-        System.out.println("Дата производства " + productionDate);
+        System.out.println("Дата производства: " + productionDate);
         System.out.println("Производитель: " + manufacturer);
         System.out.println("Страна происхождения: " + countryofOrigin);
         System.out.println("Цена: " + price);
